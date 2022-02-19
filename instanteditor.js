@@ -1,6 +1,5 @@
 /*usage
 div(contenteditable="true")
-instantEditor();
 */
 
 function instantEditor(){
@@ -52,3 +51,7 @@ function update(){
 el.onkeydown=_.debounce(update,500);
 
 };
+
+instantEditor();
+
+
