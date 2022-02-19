@@ -1,6 +1,4 @@
-/*usage
-div(contenteditable="true")
-*/
+
 
 function instantEditor(){
   
@@ -25,7 +23,8 @@ function formatDate(dt) {
   position:relative;padding:1rem;border:1px solid gray;
 }
 [contenteditable="true"]:after{
-  position:absolute;bottom:-1.5rem;content:attr(time);
+  left:0;
+  position:absolute;bottom:-3rem;content:attr(time);
 }
 </style>
  `;
@@ -54,3 +53,6 @@ el.onkeydown=_.debounce(update,500);
 
 };
 instantEditor();
+/*usage
+div(contenteditable="true")
+*/
