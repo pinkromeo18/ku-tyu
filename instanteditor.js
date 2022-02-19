@@ -20,14 +20,16 @@ function formatDate(dt) {
  if(!el) return console.log("notfound contenteditable");
   
  var style=`
+<style> 
  [contenteditable="true"]{
   position:relative;padding:1rem;border:1px solid gray;
 }
 [contenteditable="true"]:after{
   position:absolute;bottom:-1.5rem;content:attr(time);
 }
+</style>
  `;
-  document.head.innerHTML+="<style>"+style+"</style>";
+  document.body.insertAdjacentHTML("beforeend",style);
  /*
  */ 
   
@@ -51,7 +53,4 @@ function update(){
 el.onkeydown=_.debounce(update,500);
 
 };
-
 instantEditor();
-
-
