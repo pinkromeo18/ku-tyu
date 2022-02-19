@@ -1,45 +1,37 @@
 
 
-<!DOCTYPE html>
-<html lang="" >
+  <!DOCTYPE html>
+  <html lang="ja">
 
-<head>
+  <head>
 
   <meta charset="UTF-8">
-  
-<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-<meta name="apple-mobile-web-app-title" content="CodePen">
 
-<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-
-<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
-
-
-  <title>CodePen - 空中少女未然形</title>
+  <title>空中少女未然形</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <link rel='stylesheet' href='https://pinkromeo18.github.io/kohakusanto/kohakusan.css'>
-  
-<style>
-:root{
+
+  <style>
+  :root{
   --brand: #000;
   --word: #fff;
   --link: #fff;
-}
+  }
 
 
-a {
+  a {
   color: var(--word);
   text-decoration: none;
-}
+  }
 
-a,.underline {
+  a,.underline {
   display: inline-block;
   padding-bottom: 2px;
   position: relative;
-}
+  }
 
-a::after,.underline::after {
+  a::after,.underline::after {
   background-color: var(--link);
   bottom: 0;
   content: "";
@@ -48,127 +40,50 @@ a::after,.underline::after {
   position: absolute;
   transition: 0.2s width;
   width: 30%;
-}
-a:hover:after,.underline:hover:after {
+  }
+  a:hover:after,.underline:hover:after {
   width: 100%;
-}
+  }
 
-.center a:after,.center .underline::after {
+  .center a:after,.center .underline::after {
   left: 50%;
   transform: translateX(-50%);
-}
-
-.body{
-  min-height:50vh;
-}
-</style>
-
-  <script>
-  window.console = window.console || function(t) {};
-</script>
-
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
   }
-</script>
 
+  .body{
+  min-height:50vh;
+  }
+  </style>
 
-</head>
+  </head>
 
-<body translate="no" >
+  <body translate="no" >
   <div class="container full"><img src="https://pinkromeo18.github.io/ku-tyu/img/1.jpg"/>
   <hr/>
-</div>
-<div class="container body none">
+  </div>
+  <div class="container body none">
   <h2>エピソード</h2>
   <hr/>
   <p><a href="">第一話　明日とか明後日とか</a></p>
   <p><a href="">第二話　明日とか</a></p>
   <p><a href="">第三話　明日とか明後日とか明日とか明後日とか</a></p>
   <p><a href="">第四話　明日とか明後日とか</a></p>
-</div>
-<div class="container body">
+  </div>
+  <div class="container body">
   <div contenteditable="true"></div>
-</div>
-<div class="container nextprev center"> <a>次のエピソードに進む</a>
+  </div>
+  <div class="container nextprev center"> <a>次のエピソードに進む</a>
   <hr/>
-</div>
-<div class="container full" id="about"><img src="https://pinkromeo18.github.io/ku-tyu/img/2.jpg"/><img src="https://pinkromeo18.github.io/ku-tyu/img/3.jpg"/></div>
-<div class="container center">
+  </div>
+  <div class="container full" id="about"><img src="https://pinkromeo18.github.io/ku-tyu/img/2.jpg"/><img src="https://pinkromeo18.github.io/ku-tyu/img/3.jpg"/></div>
+  <div class="container center">
   <p>＊内容は多分に事実を反映しておりますが、空と庭は虚構の存在です。</p>
   <p><a href="#">(c)2022, 空中少女未然形, pinkromeo.</a></p>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.2/underscore-min.js"></script>
-<script >
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.2/underscore-min.js"></script>
+  <script scr="https://pinkromeo18.github.io/ku-tyu/instanteditor.js"></script>
 
+  </body>
 
-function instantEditor(){
-  
-function formatDate(dt) {
-  var y = dt.getFullYear();
-  var m = ('00' + (dt.getMonth()+1)).slice(-2);
-  var d = ('00' + dt.getDate()).slice(-2);
-  var h = ('00' + dt.getHours()).slice(-2);
-  var min= ('00' + dt.getMinutes()).slice(-2);
-  var s= ('00' + dt.getSeconds()).slice(-2);
-  
-  return (y + '-' + m + '-' + d +' ' + h +':' +min+':'+s);
-}
-  
-  
- var el=document.querySelector('[contenteditable="true"]');
- if(!el) return console.log("notfound contenteditable");
-  
- var style=`
-<style> 
- [contenteditable="true"]{
-  position:relative;padding:1rem;border:1px solid gray;
-}
-[contenteditable="true"]:after{
-  left:0;
-  position:absolute;bottom:-3rem;content:attr(time);
-}
-</style>
- `;
-  document.body.insertAdjacentHTML("beforeend",style);
- /*
- */ 
-  
-var savekey=location.href;
-var savetimekey=savekey+"-time";
-var dat = localStorage.getItem(savekey);
-var time= localStorage.getItem(savetimekey);
- if(dat) el.innerHTML=dat;
- if(time) el.setAttribute('time',time);
+  </html>
 
-  
-function update(){
-  //
-  dat=el.innerHTML;
-  localStorage.setItem(savekey,dat);
-  //
-  time = formatDate(new Date());
-  el.setAttribute('time',time);
-  localStorage.setItem(savetimekey,time);  
-}
-el.onkeydown=_.debounce(update,500);
-
-};
-instantEditor();
-/*usage
-div(contenteditable="true")
-*/  
-  
-</script>
-  
-  
-  
-  
-
-</body>
-
-</html>
- 
