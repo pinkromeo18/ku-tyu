@@ -27,7 +27,7 @@ function formatDate(dt) {
   position:absolute;bottom:-1.5rem;content:attr(time);
 }
  `;
-  document.body.innerHTML+="<style>"+style+"</style>";
+  document.head.innerHTML+="<style>"+style+"</style>";
  /*
  */ 
   
