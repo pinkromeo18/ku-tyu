@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html lang="ja" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+
+  <title>CodePen - A Pen by pinkromeo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://pinkromeo18.github.io/kohakusanto/kohakusan.css'>
+  
+<style>
+:root{
+  --brand: #000;
+  --word: #fff;
+  --link: #fff;
+}
+
+
+a {
+  color: var(--word);
+  text-decoration: none;
+}
+
+a,.underline {
+  display: inline-block;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+a::after,.underline::after {
+  background-color: var(--link);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  transition: 0.2s width;
+  width: 30%;
+}
+a:hover:after,.underline:hover:after {
+  width: 100%;
+}
+
+a:after,.underline::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.body{
+  min-height:50vh;
+}
+</style>
+
+
+</head>
+
+<body translate="no" >
+  <div class="container full"><img src="https://pinkromeo18.github.io/ku-tyu/img/1.jpg"/>
+  <hr/>
+</div>
+<div class="container body">
+  <h2>話題一覧</h2>
+</div>
+<div class="container nextprev center"> <a>次の話に進む</a>
+  <hr/>
+</div>
+<div class="container full" id="about"><img src="https://pinkromeo18.github.io/ku-tyu/img/2.jpg"/><img src="https://pinkromeo18.github.io/ku-tyu/img/3.jpg"/></div>
+<div class="container center">
+  <p>＊内容は多分に事実を反映しておりますが、空と庭は虚構の存在です。</p>
+  <p><a href="#">(c)2022, 空中少女未然形, pinkromeo.</a></p>
+</div>
+  
+  
+  
+  
+
+</body>
+
+</html>
+ 
